@@ -54,24 +54,3 @@ app.listen(config('PORT'), (err) => {
 })
 
 // copy here
-require('dotenv').config();
-var Bot = require('slackbots');
-
-var settings = {
-    token: process.env.TOKEN,
-    name: 'sleepy'
-};
-var sBot = new Bot(settings);
-
-sBot.on('start', function() {
-    sBot.postMessageToChannel('general', 'Hello channel!');
-    // bot.postMessageToUser('dwleonhardt', 'whatever');
-    // bot.postMessageToGroup('some-private-group', 'hello group chat!');
-});
-sBot.on('message', function(data) {
-    // all ingoing events https://api.slack.com/rtm
-    // console.log(data);
-    if (data.text == 'sleep') {
-    bot.postMessageToUser('dwleonhardt', 'Goodnight!');
-    }
-});
